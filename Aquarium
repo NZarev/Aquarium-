@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Aquarium {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int length = scanner.nextInt();
+        int width = scanner.nextInt();
+        int height = scanner.nextInt();
+        double percent = scanner.nextDouble();
+
+        int volumeCm3 = length * width * height;
+        double volumeLiters = volumeCm3 * 0.001;
+        double occupiedSpace = percent / 100;
+        double waterLiters = volumeLiters * (1 - occupiedSpace);
+
+        System.out.printf("%.3f\n", waterLiters);
+
+        scanner.close();
+    }
+}
